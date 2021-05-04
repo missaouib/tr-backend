@@ -1,0 +1,58 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform:
+      org:
+        hibernate:
+          dialect: MySQL5InnoDBDialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/topalovic_db?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+    hikari:
+      data-source-properties:
+        useUnicode: true
+        characterEncoding: UTF-8
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  flyway:
+    baselineOnMigrate: true
+  mail:
+    host: mail.lilly021.com
+    port: 2525
+    username: test@lilly021.com
+    password: Lilly021!
+    properties:
+      mail:
+        smtp:
+          auth: true
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  elasticsearch:
+    home: /etc/elasticsearch
+    clustername: elasticsearch
+    host: elasticsearch
+    port: 9200
+  deeplink: http://localhost:9090 #http://domen:port  #example -> http://207.154.199.194:9090
+  main:
+    allow-bean-definition-overriding: true
+
+document:
+  productcategory:
+    path: /home/user/Desktop/Work/images/             #/opt/images/
+    filepath: file:/home/user/Desktop/Work/images/    #/opt/images/
+
+server:
+  servlet:
+    context-path: /api
+  error:
+    include-message: always
+
+
+
+
